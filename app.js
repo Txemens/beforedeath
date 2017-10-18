@@ -25,6 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+//jquery
+app.use('/js/jquery', express.static(__dirname + '/node_modules/jquery/dist'))
+//bootstrap
+app.use('/js/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/css/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css')); 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
